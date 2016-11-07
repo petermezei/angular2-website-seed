@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './app/shared/navbar/navbar.component';
-import { NotFoundComponent } from './app/msg/404.component';
 import { WelcomeComponent } from './app/home/index.component';
 
 @NgModule({
@@ -16,8 +14,6 @@ import { WelcomeComponent } from './app/home/index.component';
   ],
   declarations: [
     AppComponent,
-    NavbarComponent,
-    NotFoundComponent,
     WelcomeComponent
   ],
   providers: [

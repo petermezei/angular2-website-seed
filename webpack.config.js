@@ -69,7 +69,7 @@ module.exports = {
 
   resolve: {
     root: __dirname,
-    extensions: ['','.js','.jsx','.ts','.json', '.css', '.html']
+    extensions: ['','.js','.jsx','.ts','.json', '.scss', '.css', '.html']
   },
 
   module: {
@@ -83,7 +83,7 @@ module.exports = {
       // support for .html as raw text
       { test: /\.html$/,  loader: 'raw' },
 
-      { test: /\.scss$/, loader: 'style!css!sass' },
+      { test: /\.scss$/,  loaders: ["raw", "sass"] },
 
       // Support for .ts files.
       { test: /\.ts$/,    loader: 'ts',
