@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "removeComments": true,
+    "types": [
+      "es6-shim",
+      "node"
+    ]
+  },
+  "files": [
+    "src/main.ts"
+  ]
+}

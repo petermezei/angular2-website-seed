@@ -1,0 +1,8 @@
+
+node_modules/
+src/build/
+.vscode/
+typings/
+
+src/css/site.css
+npm-debug.log
