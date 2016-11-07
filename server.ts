@@ -18,7 +18,8 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 
 //Static folders
 app.use('/build', express.static(__dirname + '/src/build'));
-app.use('/app', express.static(__dirname + '/src/app'));
+app.use('/assets', express.static(__dirname + '/src/assets'));
+
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, '/src/index.html'));
 });

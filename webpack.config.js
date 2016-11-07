@@ -52,8 +52,6 @@ module.exports = {
       'zone.js',
       'reflect-metadata',
       '@angular/core',
-      'jquery',
-      'bootstrap',
       './src/main'
     ],
   },

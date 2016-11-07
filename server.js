@@ -14,7 +14,7 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 //Static folders
 app.use('/build', express.static(__dirname + '/src/build'));
-app.use('/app', express.static(__dirname + '/src/app'));
+app.use('/assets', express.static(__dirname + '/src/assets'));
 app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname, '/src/index.html'));
 });

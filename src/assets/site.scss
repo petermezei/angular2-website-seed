@@ -1,0 +1,59 @@
+@import "node_modules/bootstrap-sass/assets/stylesheets/_bootstrap";
+@import "_common";
+
+body {
+    @import url('https://fonts.googleapis.com/css?family=Libre+Franklin:100,300,400,500');
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+h1,h2,h3,h4 {
+    font-weight: 300;
+}
+
+p {
+    font-weight: 200;
+}
+
+p.lead {
+    font-weight: 100;
+}
+
+.table {
+    thead {
+        th {
+            font-weight: 400;
+        }
+    }
+    td {
+        font-weight: 300;
+    }
+}
+
+.table.pricing td:last-child {
+    background-color: lightyellow;
+}
+
+.submenu {
+    margin: 20px 0px 20px 0px;
+}
+
+.download-links {
+    margin-top: 30px;
+    a:not(:last-of-type) {
+        margin-right: 15px;
+    }
+    a span {
+        font-weight: 500;
+    }
+}
+
+// Demo SASS definition
+section {
+    @include make-row();
+    .sidebar {
+        @include make-sm-column(2);
+    }
+    .body {
+        @include make-sm-column(10);
+    }
+}

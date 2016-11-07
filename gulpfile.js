@@ -10,17 +10,16 @@ var gulp = require('gulp'),
 gulp.task('default', ['watch']);
 
 gulp.task('sass', function () {
-  return gulp.src('app/**/*.scss')
+  return gulp.src('src/assets/**/*.scss')
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
     .on('error', swallowError)
     .pipe(minifycss())
-    .pipe(gulp.dest('app/.'))
+    .pipe(gulp.dest('src/assets/css/.'))
 });
 
 gulp.task('jsminify', function () {
   return gulp.src([
-    'build/angular2.js',
-    'build/app.js'
+    'src/build/bundle.js'
     ])
     .pipe(minify({
       ext:{
@@ -30,12 +29,12 @@ gulp.task('jsminify', function () {
       noSource:true
     }))
     .on('error', swallowError)
-    .pipe(gulp.dest('build'))
+    .pipe(gulp.dest('src/build'))
 });
 
 gulp.task('watch', function () {
-  gulp.watch('app/**/*.scss', ['sass']);
-  gulp.watch('build/angular2.js', ['jsminify']);
+  gulp.watch('src/assets/**/*.scss', ['sass']);
+  //gulp.watch('src/build/bundle.js', ['jsminify']);
 });
 
 function swallowError (error) {

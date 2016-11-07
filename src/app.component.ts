@@ -1,3 +1,5 @@
+require('./assets/site.scss');
+
 import { Component } from '@angular/core';
 
 @Component({
