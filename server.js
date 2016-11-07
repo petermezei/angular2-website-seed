@@ -1,4 +1,3 @@
-/// <reference path="./typings/tsd.d.ts" />
 "use strict";
 var path = require('path');
 var express = require('express');
@@ -16,7 +15,6 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 //Static folders
 app.use('/build', express.static(__dirname + '/src/build'));
 app.use('/app', express.static(__dirname + '/src/app'));
-app.use('/node_modules', express.static(__dirname + '/node_modules'));
 app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname, '/src/index.html'));
 });
