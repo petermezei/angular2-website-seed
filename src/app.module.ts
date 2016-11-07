@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 import { AComponent } from './app/a/a.component';
 import { BComponent } from './app/b/b.component';
+import { HeaderComponent } from './app/header/header.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { BComponent } from './app/b/b.component';
   declarations: [
     AppComponent,
     AComponent,
-    BComponent
+    BComponent,
+    HeaderComponent
   ],
   providers: [
   ],

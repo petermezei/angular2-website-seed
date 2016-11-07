@@ -81,7 +81,7 @@ module.exports = {
       // support for .html as raw text
       { test: /\.html$/,  loader: 'raw' },
 
-      { test: /\.scss$/,  loaders: ["raw", "sass"] },
+      { test: /\.scss$/,  loaders: ["raw", "sass", "sass-resources"] },
 
       // Support for .ts files.
       { test: /\.ts$/,    loader: 'ts',
@@ -106,6 +106,14 @@ module.exports = {
       /reflect-metadata/
     ]
   },
+
+  // Or array of paths
+  sassResources: [
+    './node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss',
+    './node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/*.scss',
+    './src/assets/_common.scss'
+  ],
+
   ts: {
     silent: true
   },
