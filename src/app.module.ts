@@ -5,9 +5,11 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
 import { HeaderComponent } from './app/common/header/header.component';
+import { FooterComponent } from './app/common/footer/footer.component';
 import { NotFoundPageComponent } from './app/404/404.component';
 import { InsightComponent } from './app/insight/insight.component';
 import { HomeComponent } from './app/home/home.component';
+import { SubmenuComponent } from './app/common/submenu/submenu.component';
 
 @NgModule({
   imports: [
@@ -23,9 +25,11 @@ import { HomeComponent } from './app/home/home.component';
   declarations: [
     AppComponent,
     HeaderComponent,
+    FooterComponent,
     NotFoundPageComponent,
     InsightComponent,
-    HomeComponent
+    HomeComponent,
+    SubmenuComponent
   ],
   providers: [
   ],
