@@ -15,3 +15,27 @@
         font-weight: 500;
     }
 }
+
+.box-holder {
+    @include make-row();
+    margin-top:30px;
+}
+
+.box {
+    @include make-xs-column(12);
+    @include make-sm-column(6);
+    @include make-md-column(3);
+    display: table;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url("http://images.apple.com/v/home/cz/images/shared/promos/nike_watch_small.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 200px;
+    border: 1px white solid;
+    .body {
+        color: white;
+        text-align: center;
+        position: relative;
+        top: 120px;
+        font-weight: 300;
+    }
+}
