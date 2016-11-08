@@ -4,28 +4,27 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
-import { AComponent } from './app/a/a.component';
-import { BComponent } from './app/b/b.component';
 import { HeaderComponent } from './app/header/header.component';
 import { NotFoundPageComponent } from './app/404/404.component';
+import { InsightComponent } from './app/insight/insight.component';
+import { HomeComponent } from './app/home/home.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      { path: '', component: AComponent },
-      { path: 'a', component: AComponent },
-      { path: 'b', component: BComponent },
+      { path: '', component: HomeComponent },
+      { path: 'insight', component: InsightComponent },
       { path: '404', component: NotFoundPageComponent },
       { path: '**', redirectTo: '/404' }
     ])
   ],
   declarations: [
     AppComponent,
-    AComponent,
-    BComponent,
     HeaderComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    InsightComponent,
+    HomeComponent
   ],
   providers: [
   ],
