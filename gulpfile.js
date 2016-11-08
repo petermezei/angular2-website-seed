@@ -17,24 +17,8 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('src/assets/css/.'))
 });
 
-gulp.task('jsminify', function () {
-  return gulp.src([
-    'src/build/bundle.js'
-    ])
-    .pipe(minify({
-      ext:{
-        min:'.min.js'
-      },
-      compress:true,
-      noSource:true
-    }))
-    .on('error', swallowError)
-    .pipe(gulp.dest('src/build'))
-});
-
 gulp.task('watch', function () {
   gulp.watch('src/assets/**/*.scss', ['sass']);
-  //gulp.watch('src/build/bundle.js', ['jsminify']);
 });
 
 function swallowError (error) {

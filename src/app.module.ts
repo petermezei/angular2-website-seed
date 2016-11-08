@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AComponent } from './app/a/a.component';
 import { BComponent } from './app/b/b.component';
 import { HeaderComponent } from './app/header/header.component';
+import { NotFoundPageComponent } from './app/404/404.component';
 
 @NgModule({
   imports: [
@@ -14,14 +15,17 @@ import { HeaderComponent } from './app/header/header.component';
     RouterModule.forRoot([
       { path: '', component: AComponent },
       { path: 'a', component: AComponent },
-      { path: 'b', component: BComponent }
+      { path: 'b', component: BComponent },
+      { path: '404', component: NotFoundPageComponent },
+      { path: '**', redirectTo: '/404' }
     ])
   ],
   declarations: [
     AppComponent,
     AComponent,
     BComponent,
-    HeaderComponent
+    HeaderComponent,
+    NotFoundPageComponent
   ],
   providers: [
   ],

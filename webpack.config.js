@@ -12,6 +12,7 @@ var path = require('path');
 // NPM
 var webpack = require('webpack');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
+var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 // Webpack Plugins
 var OccurenceOrderPlugin = webpack.optimize.OccurenceOrderPlugin;
@@ -127,10 +128,16 @@ module.exports = {
     new DedupePlugin(),
     new CommonsChunkPlugin('bundle','bundle.js',Infinity),
     new CommonsChunkPlugin('common','common.js'),
-    new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery"
-        })
+    new BrowserSyncPlugin({
+      // browse to http://localhost:3000/ during development, 
+      // ./public directory is being served 
+      host: 'localhost',
+      port: 3100,
+      proxy: 'http://localhost:3000'
+    },
+    {
+      reload: true
+    })
   ],
 
   /*
