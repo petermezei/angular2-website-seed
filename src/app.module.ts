@@ -10,6 +10,7 @@ import { NotFoundPageComponent } from './app/404/404.component';
 import { InsightComponent } from './app/insight/insight.component';
 import { HomeComponent } from './app/home/home.component';
 import { SubmenuComponent } from './app/common/submenu/submenu.component';
+import { PricingComponent } from './app/pricing/pricing.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { SubmenuComponent } from './app/common/submenu/submenu.component';
       { path: '', component: HomeComponent },
       { path: 'home', component: HomeComponent },
       { path: 'insight', component: InsightComponent },
+      { path: 'pricing', component: PricingComponent },
       { path: '404', component: NotFoundPageComponent },
       { path: '**', redirectTo: '/404' }
     ])
@@ -29,7 +31,8 @@ import { SubmenuComponent } from './app/common/submenu/submenu.component';
     NotFoundPageComponent,
     InsightComponent,
     HomeComponent,
-    SubmenuComponent
+    SubmenuComponent,
+    PricingComponent
   ],
   providers: [
   ],

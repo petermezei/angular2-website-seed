@@ -1,0 +1,6 @@
+.container {
+    .item {
+        @include make-sm-column(12);
+        @include make-md-column(6);
+    }
+}

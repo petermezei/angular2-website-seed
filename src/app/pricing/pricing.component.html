@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="page-header">Pricing</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2">Name</div>
+        <div class="col-xs-4">Price (€)</div>
+    </div>
+    <div class="row" *ngFor="let item of prices">
+        <div class="col-xs-2">{{item.name}}</div>
+        <div class="col-xs-4">{{item.price}}</div>
+    </div>
+</div>
