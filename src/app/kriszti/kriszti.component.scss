@@ -1,0 +1,22 @@
+.container {
+    .item {
+        @include make-sm-column(12);
+        @include make-md-column(6);
+    }
+}
+
+.demo {
+    height: 400px;
+
+    background-size: 1px 50px;
+    background-color: #0ae;
+    background-image: -webkit-linear-gradient(rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+}
+
+section.flower {
+    background: url('/app/assets/images/example.jpg');
+}
+
+section.dog {
+    background: url('/assets/images/dog.png');
+}
