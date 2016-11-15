@@ -4,3 +4,7 @@
         @include make-md-column(6);
     }
 }
+
+.container.hi {
+    background: url(/assets/images/dog.png);
+}

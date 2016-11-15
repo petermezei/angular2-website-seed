@@ -36,16 +36,6 @@ module.exports = {
     reasons: true
   },
 
-  // our Development Server config
-  devServer: {
-    inline: true,
-    colors: true,
-    historyApiFallback: true,
-    contentBase: '/src',
-    publicPath: '/src/build'
-  },
-
-  //
   entry: {
     'bundle': [
       'es6-shim',
@@ -59,11 +49,11 @@ module.exports = {
 
   // Config for our build files
   output: {
-    path: path.join(__dirname, '/src/build'),
+    path: __dirname + '/src/build/',
     filename: '[name].js',
     sourceMapFilename: '[name].js.map',
     chunkFilename: '[id].chunk.js',
-    publicPath: '/src/build'
+    publicPath: 'http://0.0.0.0:3000/build/'
   },
 
   resolve: {
@@ -77,12 +67,14 @@ module.exports = {
       { test: /\.json$/,  loader: 'json' },
 
       // Support for CSS as raw text
-      { test: /\.css$/,   loader: 'raw' },
+      { test: /\.css$/,   loader: 'style-loader!css-loader' },
 
       // support for .html as raw text
       { test: /\.html$/,  loader: 'raw' },
 
       { test: /\.scss$/,  loaders: ["raw", "sass", "sass-resources"] },
+
+      { test: /\.png$/, loader: "url-loader?limit=8192" },
 
       // Support for .ts files.
       { test: /\.ts$/,    loader: 'ts',
@@ -115,10 +107,6 @@ module.exports = {
     './src/assets/_common.scss'
   ],
 
-  ts: {
-    silent: true
-  },
-
   plugins: [
     new DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
@@ -138,14 +126,5 @@ module.exports = {
     {
       reload: true
     })
-  ],
-
-  /*
-   * When using `templateUrl` and `styleUrls` please use `__filename`
-   * rather than `module.id` for `moduleId` in `@View`
-   */
-  node: {
-    crypto: false,
-    __filename: true
-  }
+  ]
 };
