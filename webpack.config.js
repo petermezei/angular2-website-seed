@@ -2,25 +2,18 @@ var sliceArgs = Function.prototype.call.bind(Array.prototype.slice);
 var toString  = Function.prototype.call.bind(Object.prototype.toString);
 var NODE_ENV  = process.env.NODE_ENV || 'development';
 var pkg = require('./package.json');
-
-// Polyfill
 Object.assign = require('object-assign');
-
-// Node
 var path = require('path');
-
-// NPM
 var webpack = require('webpack');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-
-// Webpack Plugins
 var OccurenceOrderPlugin = webpack.optimize.OccurenceOrderPlugin;
 var CommonsChunkPlugin   = webpack.optimize.CommonsChunkPlugin;
 var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 var DedupePlugin   = webpack.optimize.DedupePlugin;
 var DefinePlugin   = webpack.DefinePlugin;
 var BannerPlugin   = webpack.BannerPlugin;
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 /*
  * Config
@@ -53,7 +46,7 @@ module.exports = {
     filename: '[name].js',
     sourceMapFilename: '[name].js.map',
     chunkFilename: '[id].chunk.js',
-    publicPath: 'http://0.0.0.0:3000/build/'
+    publicPath: '/build/'
   },
 
   resolve: {
@@ -63,43 +56,54 @@ module.exports = {
 
   module: {
     loaders: [
-      // Support for *.json files.
-      { test: /\.json$/,  loader: 'json' },
-
-      // Support for CSS as raw text
-      { test: /\.css$/,   loader: 'style-loader!css-loader' },
-
-      // support for .html as raw text
-      { test: /\.html$/,  loader: 'raw' },
-
-      { test: /\.scss$/,  loaders: ["raw", "sass", "sass-resources"] },
-
-      { test: /\.png$/, loader: "url-loader?limit=8192" },
-
-      // Support for .ts files.
-      { test: /\.ts$/,    loader: 'ts',
-        query: {
-          'ignoreDiagnostics': [
-            // 2300, // 2300 -> Duplicate identifier
-            // 2309 // 2309 -> An export assignment cannot be used in a module with other exported elements.
-          ]
-        },
-        exclude: [
-          /\.min\.js$/,
-          /\.spec\.ts$/,
-          /\.e2e\.ts$/,
-          /web_modules/,
-          /test/,
-          /node_modules/
+      {
+        test: /\.ts$/,
+        loader: 'ts',
+        exclude: [/node_modules/]
+      },
+      {
+        test: /\.json$/,
+        loader: 'json'
+      },
+      {
+        test: /\.scss$/,
+        loaders: ['exports-loader?module.exports.toString()', 'css', 'sass', "sass-resources"]
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|ico)(\?[a-z0-9]+)?$/,
+        loaders: [
+          'file?name=images/[name].[hash].[ext]',
+          'image-webpack'
         ]
+      },
+      {
+        test: /\.(html|css)$/,
+        loader: 'raw'
       }
-    ],
-    noParse: [
-      /rtts_assert\/src\/rtts_assert/,
-      /reflect-metadata/
     ]
   },
-
+  sassLoader: {
+    includePaths: [path.resolve(__dirname, "./src/assets")]
+  },
+  imageWebpackLoader: {
+    mozjpeg: {
+      quality: 65
+    },
+    pngquant:{
+      quality: "65-90",
+      speed: 4
+    },
+    svgo:{
+      plugins: [
+        {
+          removeViewBox: false
+        },
+        {
+          removeEmptyAttrs: false
+        }
+      ]
+    }
+  },
   // Or array of paths
   sassResources: [
     './node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss',

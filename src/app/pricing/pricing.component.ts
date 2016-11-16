@@ -12,6 +12,8 @@ export class PricingComponent {
         title.setTitle("Pricing");
     }
 
+    //image = require("src/assets/images/dog.png");
+
     prices = [
         new Price("a","1"),
         new Price("b","2"),

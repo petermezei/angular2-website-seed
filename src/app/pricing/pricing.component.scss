@@ -6,5 +6,8 @@
 }
 
 .container.hi {
-    background: url(/assets/images/dog.png);
+    background: url(./images/dog.png);
+    h1 {
+        color: red;
+    }
 }
