@@ -83,9 +83,18 @@ module.exports = {
       // Support for *.json files.
       { test: /\.json$/,  loader: 'json' },
 
+      // Support for image files + compression.
       {
         test: /\.scss$/,
         loaders: ['exports-loader?module.exports.toString()', 'css', 'sass', "sass-resources"]
+      },
+
+      // Support for font files.
+      {
+        test: /\.(woff|woff2|otf|eot|svg|ttf)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loaders: [
+          "file?name=fonts/[name].[hash].[ext]"
+          ]
       },
 
       {
@@ -114,6 +123,10 @@ module.exports = {
 
   ts: {
     silent: true
+  },
+
+  sassLoader: {
+    includePaths: [path.resolve(__dirname, "./src/assets")]
   },
 
   plugins: [

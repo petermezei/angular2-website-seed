@@ -5,11 +5,17 @@
     }
 }
 
+@font-face {
+    font-family: slamby-logo;
+    src: url(slamby-logo.woff);
+}
+
 .container.hi {
     background: url(./images/team.jpg);
     background-size: cover;
     height: 700px;
     h1 {
         color: red;
+        font-family: slamby-logo;
     }
 }
