@@ -6,7 +6,9 @@
 }
 
 .container.hi {
-    background: url(./images/main_header.png);
+    background: url(./images/team.jpg);
+    background-size: cover;
+    height: 700px;
     h1 {
         color: red;
     }
