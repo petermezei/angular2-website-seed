@@ -89,9 +89,10 @@ module.exports = {
       },
 
       {
-        test: /\.(png|jpg|jpeg|gif|ico)(\?[a-z0-9]+)?$/,
+        test: /\.(png|jpg|jpe?g|gif|ico)(\?[a-z0-9]+)?$/,
         loaders: [
-          'file?name=images/[name].[hash].[ext]'
+          'file?name=images/[name].[hash].[ext]',
+          'img?minimize&optimizationLevel=7&progressive=true'
         ]
       },
 
