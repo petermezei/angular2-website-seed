@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'pm-header',
@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
     styles: [require('./header.component.scss')]
 })
 
-export class HeaderComponent {}
+export class HeaderComponent {
+    @Input() theme: String = "theme-default";
+}
