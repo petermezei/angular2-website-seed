@@ -1,6 +1,43 @@
-.container {
+section.main {
+    background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url(./images/tablet-galaxy-white-blog.jpg) 0 0;
+    background-size: cover;
+    background-position-x: center;
+    margin-top:-50px;
+
+    .btn {
+        background-color: transparent !important;
+        color: white;
+    }
+
+    .box {
+        @include make-row();
+
+        margin-top: 250px;
+        margin-bottom: 250px;
+        text-align: left;
+        color: white;
+
+        .main-message {
+            @include make-xs-column(12);
+            @include make-md-column(6);
+            background-color: rgba(0,0,0,0.2);
+            padding: 15px;
+        }
+    }
+}
+
+.submain {
     .item {
-        @include make-sm-column(12);
-        @include make-md-column(6);
+        @include make-xs-column(12);
+        @include make-sm-column(6);
+        @include make-md-column(3);
+
+        color: white;
+        border: 1px white solid;
+    }
+    .item.fall {
+        background-image: url(./images/fall01.jpg);
+        background-size: cover;
+        background-position-y: bottom;
     }
 }
