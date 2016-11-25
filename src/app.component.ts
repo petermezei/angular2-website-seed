@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Angulartics2GoogleAnalytics } from 'angulartics2';
 
 @Component({
     selector: 'pm-app',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
     <pm-footer></pm-footer>`
 })
 
-export class AppComponent {};
+export class AppComponent {
+    constructor(angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics) {}
+};

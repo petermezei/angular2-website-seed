@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { Angulartics2GoogleAnalytics, Angulartics2Module } from 'angulartics2';
 
 import { AppComponent } from './app.component';
 
@@ -22,7 +23,8 @@ import { PricingComponent } from './app/pricing/pricing.component';
       { path: 'pricing', component: PricingComponent },
       { path: '404', component: NotFoundPageComponent },
       { path: '**', redirectTo: '/404' }
-    ])
+    ]),
+    Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ])
   ],
   declarations: [
     AppComponent,
