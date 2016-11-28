@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Angulartics2GoogleAnalytics } from 'angulartics2';
+import { PageScrollConfig } from 'ng2-page-scroll';
 
 @Component({
     selector: 'pm-app',
@@ -8,5 +9,7 @@ import { Angulartics2GoogleAnalytics } from 'angulartics2';
 })
 
 export class AppComponent {
-    constructor(angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics) {}
+    constructor(angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics) {
+        PageScrollConfig.defaultDuration = 300;
+    }
 };

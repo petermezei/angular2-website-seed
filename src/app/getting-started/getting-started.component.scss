@@ -1,0 +1,13 @@
+.menu {
+    @include make-md-column(2);
+    .list-group {
+        margin-top: 30px;
+    }
+}
+
+.body {
+    @include make-md-column(10);
+    h1 {
+        margin-top: 30px;
+    }
+}
