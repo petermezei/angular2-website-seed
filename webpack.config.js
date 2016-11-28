@@ -54,7 +54,7 @@ module.exports = {
       'reflect-metadata',
       '@angular/core',
       './src/main'
-    ],
+    ]
   },
 
   // Config for our build files
