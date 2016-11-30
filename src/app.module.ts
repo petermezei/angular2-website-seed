@@ -16,6 +16,8 @@ import { HomeComponent } from './app/home/home.component';
 import { SubmenuComponent } from './app/common/submenu/submenu.component';
 import { PricingComponent } from './app/pricing/pricing.component';
 import { GettingStartedComponent } from './app/getting-started/getting-started.component';
+import { PartnersComponent } from './app/partners/partners.component';
+import { CompanyComponent } from './app/company/company.component';
 
 @NgModule({
   imports: [
@@ -28,6 +30,8 @@ import { GettingStartedComponent } from './app/getting-started/getting-started.c
       { path: '404', component: NotFoundPageComponent },
       { path: 'thankyou', component: ThankYouComponent },
       { path: 'getting-started', component: GettingStartedComponent },
+      { path: 'partners', component: PartnersComponent },
+      { path: 'company', component: CompanyComponent },
       { path: '**', redirectTo: '/404' }
     ]),
     Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ]),
@@ -43,7 +47,9 @@ import { GettingStartedComponent } from './app/getting-started/getting-started.c
     InsightComponent,
     HomeComponent,
     SubmenuComponent,
-    PricingComponent
+    PricingComponent,
+    PartnersComponent,
+    CompanyComponent
   ],
   providers: [
   ],

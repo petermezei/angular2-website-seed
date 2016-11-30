@@ -1,8 +1,12 @@
-@import "_common";
+@import "common";
 
-body {
+$light-grey: #F0B8C1;
+
+html,body {
     @import url('https://fonts.googleapis.com/css?family=Libre+Franklin:100,300,400,500');
     font-family: 'Libre Franklin', sans-serif;
+    height: 100%;
+    overflow: auto;
 }
 
 h1,h2,h3,h4 {
@@ -30,5 +34,5 @@ p.lead {
 
 @font-face {
     font-family: slamby-logo;
-    src: url(fonts/slamby-logo.woff);
+    src: url(./fonts/slamby-logo.woff);
 }
