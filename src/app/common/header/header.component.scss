@@ -45,6 +45,10 @@ section {
     @extend .list;
 }
 
+.sla-nav-header .menu-open-btn {
+    cursor: pointer;
+}
+
 // Phone & tablet size
 @media (max-width: $screen-sm-max){
     .sla-nav-menu-items {

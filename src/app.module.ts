@@ -18,6 +18,7 @@ import { PricingComponent } from './app/pricing/pricing.component';
 import { GettingStartedComponent } from './app/getting-started/getting-started.component';
 import { PartnersComponent } from './app/partners/partners.component';
 import { CompanyComponent } from './app/company/company.component';
+import { PrivacyPolicyComponent } from './app/privacy-policy/privacy-policy.component';
 
 @NgModule({
   imports: [
@@ -32,6 +33,7 @@ import { CompanyComponent } from './app/company/company.component';
       { path: 'getting-started', component: GettingStartedComponent },
       { path: 'partners', component: PartnersComponent },
       { path: 'company', component: CompanyComponent },
+      { path: 'privacy-policy', component: PrivacyPolicyComponent },
       { path: '**', redirectTo: '/404' }
     ]),
     Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ]),
@@ -49,7 +51,8 @@ import { CompanyComponent } from './app/company/company.component';
     SubmenuComponent,
     PricingComponent,
     PartnersComponent,
-    CompanyComponent
+    CompanyComponent,
+    PrivacyPolicyComponent
   ],
   providers: [
   ],
