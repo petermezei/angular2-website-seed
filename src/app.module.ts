@@ -18,7 +18,14 @@ import { PricingComponent } from './app/pricing/pricing.component';
 import { GettingStartedComponent } from './app/getting-started/getting-started.component';
 import { PartnersComponent } from './app/partners/partners.component';
 import { CompanyComponent } from './app/company/company.component';
-import { PrivacyPolicyComponent } from './app/privacy-policy/privacy-policy.component';
+import { PrivacyPolicyComponent } from './app/legal/privacy-policy.component';
+import { LegalMenuComponent } from './app/legal/legal-menu.component';
+import { CommercialLicenseComponent } from './app/legal/commercial-license.component';
+import { CommercialLicenseOemComponent } from './app/legal/commercial-license-oem.component';
+import { OpenSourceLicenseComponent } from './app/legal/open-source-license.component';
+import { GnuAgplLicenseComponent } from './app/legal/gnu-agpl-license.component';
+
+import { SupportComponent } from './app/support/support.component';
 
 @NgModule({
   imports: [
@@ -33,7 +40,12 @@ import { PrivacyPolicyComponent } from './app/privacy-policy/privacy-policy.comp
       { path: 'getting-started', component: GettingStartedComponent },
       { path: 'partners', component: PartnersComponent },
       { path: 'company', component: CompanyComponent },
-      { path: 'privacy-policy', component: PrivacyPolicyComponent },
+      { path: 'legal/privacy-policy', component: PrivacyPolicyComponent },
+      { path: 'legal/commercial-license', component: CommercialLicenseComponent },
+      { path: 'legal/commercial-license-oem', component: CommercialLicenseOemComponent },
+      { path: 'legal/gnu-agpl-license', component: GnuAgplLicenseComponent },
+      { path: 'legal/open-source-license', component: OpenSourceLicenseComponent },
+      { path: 'support', component: SupportComponent },
       { path: '**', redirectTo: '/404' }
     ]),
     Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ]),
@@ -52,7 +64,13 @@ import { PrivacyPolicyComponent } from './app/privacy-policy/privacy-policy.comp
     PricingComponent,
     PartnersComponent,
     CompanyComponent,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
+    CommercialLicenseComponent,
+    CommercialLicenseOemComponent,
+    GnuAgplLicenseComponent,
+    OpenSourceLicenseComponent,
+    LegalMenuComponent,
+    SupportComponent
   ],
   providers: [
   ],

@@ -3,7 +3,7 @@ import { Title } from '@angular/platform-browser';
 
 @Component({
     template: require('./privacy-policy.component.html'),
-    styles: [require('./privacy-policy.component.scss')]
+    styles: [require('./legal.component.scss')]
 })
 
 export class PrivacyPolicyComponent {

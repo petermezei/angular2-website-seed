@@ -63,6 +63,7 @@
     "browser-sync-webpack-plugin": "^1.1.3",
     "connect": "2.x",
     "connect-browser-sync": "^2.0.1",
+    "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.25.0",
     "del": "^2.2.1",
     "es6-shim": "^0.35.1",

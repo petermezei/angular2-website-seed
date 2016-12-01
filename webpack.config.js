@@ -54,7 +54,7 @@ module.exports = {
       'reflect-metadata',
       '@angular/core',
       './src/main'
-    ]
+    ],
   },
 
   // Config for our build files
@@ -89,12 +89,6 @@ module.exports = {
         loaders: ['exports-loader?module.exports.toString()', 'css', 'sass', "sass-resources"]
       },
 
-      // Support for image files + compression.
-      {
-        test: /\.html$/,
-        loaders: ["html"]
-      },
-
       // Support for font files.
       {
         test: /\.(woff|woff2|otf|eot|svg|ttf)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -112,7 +106,7 @@ module.exports = {
       },
 
       // support for .html as raw text
-      { test: /\.(css)$/,  loader: 'raw' },
+      { test: /\.(html|css)$/,  loader: 'raw' },
     ],
     noParse: [
       /rtts_assert\/src\/rtts_assert/,
@@ -130,6 +124,10 @@ module.exports = {
     silent: true
   },
 
+  sassLoader: {
+    includePaths: [path.resolve(__dirname, "./src/assets")]
+  },
+
   plugins: [
     new DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
@@ -137,7 +135,7 @@ module.exports = {
     }),
     new OccurenceOrderPlugin(),
     new DedupePlugin(),
-    new CommonsChunkPlugin('bundle','bundle.js'),
+    new CommonsChunkPlugin('bundle','bundle.js',Infinity),
     new CommonsChunkPlugin('common','common.js'),
     new BrowserSyncPlugin({
       // browse to http://localhost:3000/ during development, 

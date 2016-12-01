@@ -8,6 +8,6 @@ import { Title } from '@angular/platform-browser';
 
 export class GettingStartedComponent {
     constructor (title: Title){
-        title.setTitle("Slamby - Understanding Data Made Simple");
+        title.setTitle("Getting started - Slamby");
     }
 }
