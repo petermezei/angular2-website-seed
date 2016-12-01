@@ -89,6 +89,9 @@ module.exports = {
         loaders: ['exports-loader?module.exports.toString()', 'css', 'sass', "sass-resources"]
       },
 
+      // support for .css as raw text
+      { test: /\.css$/,  loader: 'raw' },
+
       // Support for font files.
       {
         test: /\.(woff|woff2|otf|eot|svg|ttf)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -105,8 +108,11 @@ module.exports = {
         ]
       },
 
-      // support for .html as raw text
-      { test: /\.(html|css)$/,  loader: 'raw' },
+      // support for .css as raw text
+      {
+        test: /\.html$/,
+        loader: 'raw'
+      }
     ],
     noParse: [
       /rtts_assert\/src\/rtts_assert/,
